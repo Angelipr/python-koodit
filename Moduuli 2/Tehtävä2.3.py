@@ -1,4 +1,3 @@
-
 kanta_str = input("Suorakulmion kanta: ")
 korkeus_str = input("Suorakulmion korkeus: ")
 kanta = float(kanta_str)
