@@ -2,7 +2,7 @@ import mysql.connector
 
 def get_airport_by_iso_country(iso_country):
     sql = f'SELECT type, count(*) FROM airport WHERE iso_country = "{iso_country}"group by type'
-    kursori = yhteys.cursor()
+    kursori = yhteys.cursor(dictionary=True)
     kursori.execute(sql)
     tulos = kursori.fetchall()
     return tulos
@@ -17,4 +17,5 @@ yhteys = mysql.connector.connect(
     )
 maakoodi = input('Anna maakoodi: ')
 maakoodi = get_airport_by_iso_country(maakoodi)
-print(maakoodi)
+for i in maakoodi:
+    print(f'{i["type"]} ja {i["count(*)"]}')
