@@ -2,7 +2,7 @@ class Auto:
     def __init__(self, rekisteritunnus, huippunopeus):
         self.rekisteritunnus = rekisteritunnus
         self.huippunopeus = int(huippunopeus)
-        self.nopeusnyt = 40
+        self.nopeusnyt = 0
         self.kuljettumatka = 0
 
     def kiihdytä(self, nopeudenmuutos):
@@ -31,7 +31,8 @@ class Polttomoottoriauto(Auto):
 sähkö = Sähköauto("ABC-15", 180, 52.5)
 poltto = Polttomoottoriauto("ABC-123", 165, 32.3)
 
-#sähkö.kiihdytä(100)
+sähkö.kiihdytä(100)
+poltto.kiihdytä(70)
 sähkö.kulje(3)
 poltto.kulje(3)
 print(f'Sähköauto on kulkenut {sähkö.kuljettumatka} km')
